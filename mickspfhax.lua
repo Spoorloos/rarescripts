@@ -13,6 +13,10 @@ local espToggle = true
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/CkyR8ePz",true))()
 local espwindow = library:CreateWindow("Micks PFHACKS")
 
+
+
+espwindow:Section('ESP:')
+
 espwindow:Bind("Toggled", {
    flag = "espToggle";
    kbonly = true;
@@ -20,8 +24,6 @@ espwindow:Bind("Toggled", {
 }, function()
    if espToggle == true then espToggle = false elseif espToggle == false then espToggle = true end
 end)
-
-espwindow:Section('Settings:')
 
 espwindow:Bind("Rainbow", {
    flag = "espRainbow";
@@ -31,9 +33,25 @@ espwindow:Bind("Rainbow", {
    if espRainbow == true then espRainbow = false elseif espRainbow == false then espRainbow = true end
 end)
 
+
+espwindow:Section('Other:')
+
 espwindow:Button("Silent Aim", function()
 	print("Silent aim has loaded!")
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Spoorloos/rarescripts/master/pfsilentaim"))()
+end)
+
+espwindow:Button("Chams", function()
+	print("Chams have loaded!")
+	getgenv().ESPSettings = {
+		Color = Color3.fromRGB(255, 204, 255)
+	}
+	loadstring(game:HttpGet('https://arilis.dev/releases/pf_chams.lua', true))()
+end)
+
+espwindow:Button("Box ESP", function()
+	print("Box ESP has loaded!")
+	loadstring(game:HttpGet("https://fluxteam.xyz/scripts/downloadfluxus.lua", true))()
 end)
 
 local player = game.Players.LocalPlayer
