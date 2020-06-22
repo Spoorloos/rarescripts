@@ -7,7 +7,7 @@ Modified for phantom forces update by Spoorloos#7871
 ]]
 
 local espRainbow = false
-local espToggle = true
+local espToggle = false
 
 
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/CkyR8ePz",true))()
